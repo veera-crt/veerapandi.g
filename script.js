@@ -53,20 +53,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Contact Form Handler (Spider-Sense Simulation)
     const contactForm = document.querySelector('.apple-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        contactForm.addEventListener('submit', () => {
+            // No e.preventDefault() here so it submits to the hidden iframe
             const btn = contactForm.querySelector('button');
             const originalText = btn.textContent;
 
             btn.textContent = 'Web-Net Deployed...';
             btn.disabled = true;
 
+            // Wait for submission to complete in iframe
             setTimeout(() => {
                 alert('Signal received by WEBSEC. Secure transmission confirmed.');
                 btn.textContent = originalText;
                 btn.disabled = false;
                 contactForm.reset();
-            }, 1200);
+            }, 1500);
         });
     }
 
