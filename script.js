@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Wait for submission to complete in iframe
             setTimeout(() => {
-                alert('Signal received by WEBSEC. Secure transmission confirmed.');
+                alert('Message Send !');
                 btn.textContent = originalText;
                 btn.disabled = false;
                 contactForm.reset();
